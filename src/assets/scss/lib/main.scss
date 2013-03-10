@@ -104,48 +104,17 @@ a.button {
   }
 }
 
+.primary-actions {
+  float: right;
+  max-width: 65%;
+  text-align: right;
 
-article.context {
-  > form {
-    > header > h1 {
+  > ul > li {
+    @include inline-block;
+    margin-top: 0.5em;
+
+    &:first-child {
       margin-top: 0;
-      font-weight: normal;
-    }
-    > .content {
-
-    }
-    > footer {
-      margin-top: 1em;
-
-      ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-
-        > li > a {
-          text-decoration: none;
-        }
-      }
-
-      > .primary-actions {
-        float: right;
-        max-width: 65%;
-        text-align: right;
-
-        > ul > li {
-          @include inline-block;
-          margin-top: 0.5em;
-
-          &:first-child {
-            margin-top: 0;
-          }
-        }
-      }
-      > .secondary-actions {
-        float: left;
-        max-width: 35%;
-        text-transform: lowercase;
-      }
     }
   }
 }

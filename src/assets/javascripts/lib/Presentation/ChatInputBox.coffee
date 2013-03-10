@@ -31,26 +31,21 @@ define "lib/Presentation/ChatInputBox",
     ## Templates
 
     template: _.template(
-      '<article class="context">'+
-        '<form novalidate>'+
-          '<div class="content">'+
-            '<div class="fields">'+
-            '</div>'+
+      '<form novalidate>'+
+        '<div class="content"></div>'+
+        '<footer>'+
+          '<div class="primary-actions">'+
+            '<ul><li><button type="submit" class="button continue">Chat</button></li></ul>'+
           '</div>'+
-          '<footer>'+
-            '<div class="primary-actions">'+
-              '<ul><li><button type="submit" class="button continue">Chat</button></li></ul>'+
-            '</div>'+
-          '</footer>'+
-        '</form>'+
-      '</article>'
+        '</footer>'+
+      '</form>'
     )
 
     render: =>
       @$el.append(@_yieldWrapper)
 
       @$el.html @template()
-      @$("div.fields").append(@_chatInputField.render().el)
+      @$("div.content").append(@_chatInputField.render().el)
       @$el.append(@_chatListView.render().el)
 
       @
