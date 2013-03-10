@@ -55,7 +55,7 @@ define "lib/Presentation/ChatInputBox",
 
       @
 
-    ## Private Instance MEthods
+    ## Private Instance Methods
 
     _getChatService: =>
       unless @_chatService?
@@ -72,5 +72,6 @@ define "lib/Presentation/ChatInputBox",
       e.preventDefault()
 
       @_getChatService().SendMessage @_chatInputField.GetValue()
+      @_chatInputField.SetValue null
 
       false

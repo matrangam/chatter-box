@@ -47,3 +47,5 @@ define "lib/Form/Field",
     ## Public Instance Methods
 
     GetValue: => @_input.GetValue()
+
+    SetValue: => @_input.SetValue()
