@@ -43,3 +43,7 @@ define "lib/Form/Field",
     ## Protected Instance Methods
 
     _getTextLabelElement: => @_textLabelElement ?= $("<span>").addClass("text")
+
+    ## Public Instance Methods
+
+    GetValue: => @_input.GetValue()

@@ -3,11 +3,18 @@ define "lib/Presentation/ChatInputBox",
   "backbone"
   "lib/Form/Field"
   "lib/Form/TextInput"
+  "lib/Service/ChatService"
 ],
-(Backbone, Field, TextInput) ->
+(Backbone, Field, TextInput, ChatService) ->
   class extends Backbone.View
 
+    ## Configuration
+
     className: "canvas pie-clearfix"
+
+    ## Events
+
+    events: "submit form": "_handleFormSubmit"
 
     ## Initialize
 
@@ -45,13 +52,22 @@ define "lib/Presentation/ChatInputBox",
 
       @
 
-    ## Events
+    ## Private Instance MEthods
 
-    events: "submit form": "_handleFormSubmit"
+    _getChatService: =>
+      unless @_chatService?
+        @_chatService = new ChatService()
+        console.log @_chatService
+        @_chatService.on ChatService.EVENT.ON_RECEIVE, @_chatServiceOnReceive
+      @_chatService
 
     ## Event Handlers
 
+    _chatServiceOnReceive: => console.log "SONSOSNOSNSONS: ", arguments
+
     _handleFormSubmit: (e) =>
       e.preventDefault()
+
+      @_getChatService().SendMessage @_chatInputField.GetValue()
 
       false
