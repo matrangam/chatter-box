@@ -1,0 +1,10 @@
+source "http://rubygems.org"
+
+gem "rake", "10.0.2"
+gem "rb-fsevent", "0.9.2"
+gem "rb-readline", "0.4.2"
+gem "guard-coffeescript", "1.2.1"
+gem "guard-compass", "0.0.6"
+gem "guard-haml", "0.4"
+gem "guard-shell", "0.5.1"
+gem "terminal-notifier-guard", "1.5.3"

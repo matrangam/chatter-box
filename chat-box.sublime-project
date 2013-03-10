@@ -1,0 +1,25 @@
+{
+	"folders":
+	[
+		{
+      "name": "ChatBox",
+			"path": ".",
+      "file_exclude_patterns": ["bin/*.html"],
+      "folder_exclude_patterns":
+      [
+        "bin/assets/css",
+        "bin/assets/images",
+        "bin/assets/javascripts/app",
+        "bin/assets/javascripts/lib",
+        "bin/assets/javascripts/spec",
+        "dependencies",
+        "docs",
+        "node_modules",
+        "vendor"
+      ]
+		}
+	],
+  "settings": {
+    "tab_size": 2
+  }
+}

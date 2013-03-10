@@ -1,0 +1,10 @@
+.DS_Store
+.sass-cache
+bin/assets/css/*
+bin/assets/javascripts/app/*
+bin/assets/javascripts/lib/*
+bin/assets/javascripts/spec/lib/*
+bin/endpoints/ILogService/GetRules.json
+bin/*.html
+docs/*
+qfrs.sublime-workspace

@@ -1,0 +1,6 @@
+--name "QFRS"
+--readme README.md
+--title "QFRS Documentation"
+--private false
+--output-dir ./docs
+./src/assets/javascripts

@@ -1,0 +1,52 @@
+- root_path = ENV["ROOT_PATH"]
+!!! 5
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+%html.no-js
+  <!--<![endif]-->
+  %head
+    %meta{:charset => :"utf-8"}
+    %meta{:'http-equiv' => "X-UA-Compatible", :content => "IE=edge,chrome=1"}
+    %title
+    %meta{:name => :description, :content => ""}
+    %meta{:name => :viewport, :content => "width=device-width"}
+
+    %link{:rel => :stylesheet, :href => "#{root_path}/assets/css/lib/main.css"}
+
+    %script{:src => "#{root_path}/assets/javascripts/vendor/modernizr-2.5.3.min.js"}
+  %body
+    #main
+
+      #torso{:role => :main}
+
+    %script{:src => "#{root_path}/assets/javascripts/vendor/require-jquery.js"}
+    :javascript
+      define("config", ["jquery"], function($) {
+        return {
+          // RootPath must:
+          // - Be an empty string (""), or;
+          // - Be an absolute path starting with a forward-slash, but not ending with a forward-slash ("/quote")
+          RootPath: "#{root_path}",
+          // AssetPath will be used for CSS and Image files.
+          // Because the CSS references images using relative paths it is assumed that images will be in an "images" subfolder and that css will be in a "css" subfolder of the AssetPath.
+          AssetPath: "#{root_path}/assets",
+          // JavascriptPath will be used for all Javascript files.
+          JavascriptPath: "#{root_path}/assets/javascripts",
+          RulesFileUrl: "#{root_path}/endpoints/ILogService/GetRules.json",
+          Require: {
+            Overrides: {
+              "lib/QFRS.Integration/Service/PickListService": "lib/QFRS.Integration.Dummy/Service/DummyPickListService"
+            }
+          },
+          I18n: {
+            // Defines the path to load the internationalization file for the application.
+            // __lng__ will be replaced with the language being used.
+            ResGetPath: "#{root_path}/assets/i18n/__lng__.json?" + (new Date()).getTime(),
+            Language: "en-US"
+          },
+          RootContainer: $("#torso"),
+        };
+      });
+    %script{:src => "#{root_path}/assets/javascripts/app/init.js"}
