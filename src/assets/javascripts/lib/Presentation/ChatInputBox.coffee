@@ -4,9 +4,10 @@ define "lib/Presentation/ChatInputBox",
   "lib/Form/Field"
   "lib/Form/TextInput"
   "lib/Service/ChatService"
+  "lib/Presentation/ChatListView"
 ],
-(Backbone, Field, TextInput, ChatService) ->
-  class extends Backbone.View
+(Backbone, Field, TextInput, ChatService, ChatListView) ->
+  class ChatInputBox extends Backbone.View
 
     ## Configuration
 
@@ -24,6 +25,8 @@ define "lib/Presentation/ChatInputBox",
       @_chatInputField = new Field
         input: new TextInput()
         label: "Chat here -->"
+
+      @_chatListView = new ChatListView()
 
     ## Templates
 
@@ -43,12 +46,12 @@ define "lib/Presentation/ChatInputBox",
       '</article>'
     )
 
-
     render: =>
       @$el.append(@_yieldWrapper)
 
       @$el.html @template()
       @$("div.fields").append(@_chatInputField.render().el)
+      @$el.append(@_chatListView.render().el)
 
       @
 
@@ -57,13 +60,13 @@ define "lib/Presentation/ChatInputBox",
     _getChatService: =>
       unless @_chatService?
         @_chatService = new ChatService()
-        console.log @_chatService
         @_chatService.on ChatService.EVENT.ON_RECEIVE, @_chatServiceOnReceive
       @_chatService
 
     ## Event Handlers
 
-    _chatServiceOnReceive: => console.log "SONSOSNOSNSONS: ", arguments
+    _chatServiceOnReceive: (message) =>
+      @_chatListView.AppendNewListItem(message)
 
     _handleFormSubmit: (e) =>
       e.preventDefault()
