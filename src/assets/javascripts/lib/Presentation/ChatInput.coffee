@@ -1,4 +1,4 @@
-define "lib/Presentation/ChatInputBox",
+define "lib/Presentation/ChatInput",
 [
   "backbone"
   "lib/Form/Field"
@@ -7,7 +7,7 @@ define "lib/Presentation/ChatInputBox",
   "lib/Presentation/ChatListView"
 ],
 (Backbone, Field, TextInput, ChatService, ChatListView) ->
-  class ChatInputBox extends Backbone.View
+  class ChatInput extends Backbone.View
 
     ## Configuration
 
