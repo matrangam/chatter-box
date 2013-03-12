@@ -2,13 +2,13 @@ define "lib/Application",
   [
     "jquery"
     "backbone"
-    "lib/Presentation/ChatInput"
+    "lib/Presentation/ChatWindow"
     "jquery-path"
   ],
   (
     $
     Backbone
-    ChatInput
+    ChatWindow
   ) ->
     class Application
       ## Protected Instance Properties
@@ -22,7 +22,7 @@ define "lib/Application",
 
         @_rootContainer = @$(config.RootContainer)
 
-        @_canvas = new ChatInput(
+        @_canvas = new ChatWindow(
           application: @
         ).render()
 

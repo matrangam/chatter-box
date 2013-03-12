@@ -4,15 +4,9 @@ define "lib/Presentation/ChatInput",
   "lib/Form/Field"
   "lib/Form/TextInput"
   "lib/Service/ChatService"
-  "lib/Presentation/ChatListView"
 ],
-(Backbone, Field, TextInput, ChatService, ChatListView) ->
+(Backbone, Field, TextInput, ChatService) ->
   class ChatInput extends Backbone.View
-
-    ## Configuration
-
-    className: "canvas pie-clearfix"
-
     ## Events
 
     events: "submit form": "_handleFormSubmit"
@@ -20,13 +14,9 @@ define "lib/Presentation/ChatInput",
     ## Initialize
 
     initialize: (options) ->
-      @_yieldWrapper = $("<div>").addClass("yield")
-
       @_chatInputField = new Field
         input: new TextInput()
         label: "Chat here -->"
-
-      @_chatListView = new ChatListView()
 
     ## Templates
 
@@ -42,31 +32,19 @@ define "lib/Presentation/ChatInput",
     )
 
     render: =>
-      @$el.append(@_yieldWrapper)
-
       @$el.html @template()
       @$("div.content").append(@_chatInputField.render().el)
-      @$el.append(@_chatListView.render().el)
 
       @
 
-    ## Private Instance Methods
-
-    _getChatService: =>
-      unless @_chatService?
-        @_chatService = new ChatService()
-        @_chatService.on ChatService.EVENT.ON_RECEIVE, @_chatServiceOnReceive
-      @_chatService
-
-    ## Event Handlers
-
-    _chatServiceOnReceive: (message) =>
-      @_chatListView.AppendNewListItem(message)
-
     _handleFormSubmit: (e) =>
       e.preventDefault()
-
-      @_getChatService().SendMessage @_chatInputField.GetValue()
+      @trigger @constructor.EVENT.MESSAGE_SEND, @_chatInputField.GetValue(), @
       @_chatInputField.SetValue null
 
       false
+
+    ## Events
+
+    @EVENT ?= {}
+    @EVENT.MESSAGE_SEND = "message-send"
