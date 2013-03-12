@@ -1,9 +1,9 @@
-define "lib/Presentation/ChatListView",
+define "lib/Presentation/ChatList",
 [
   "backbone"
   "lib/Presentation/ChatListItem"
 ], (Backbone, ChatListItem) ->
-  class ChatListView extends Backbone.View
+  class ChatList extends Backbone.View
 
     ## Template
 

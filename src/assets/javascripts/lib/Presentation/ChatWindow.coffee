@@ -2,9 +2,9 @@ define "lib/Presentation/ChatWindow",
 [
   "backbone"
   "lib/Presentation/ChatInput"
-  "lib/Presentation/ChatListView"
+  "lib/Presentation/ChatList"
 ],
-(Backbone, ChatInput, ChatListView) ->
+(Backbone, ChatInput, ChatList) ->
   class ChatWindow extends Backbone.View
     ## Configuration
 
@@ -35,7 +35,7 @@ define "lib/Presentation/ChatWindow",
         @_chatInput.on ChatInput.EVENT.MESSAGE_SEND, @_chatInputEventMessageSend
       @_chatInput
 
-    _getChatList: => @_chatList ?= new ChatListView()
+    _getChatList: => @_chatList ?= new ChatList()
 
     ## Event Handlers
 
