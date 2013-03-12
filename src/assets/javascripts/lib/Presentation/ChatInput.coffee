@@ -3,9 +3,8 @@ define "lib/Presentation/ChatInput",
   "backbone"
   "lib/Form/Field"
   "lib/Form/TextInput"
-  "lib/Service/ChatService"
 ],
-(Backbone, Field, TextInput, ChatService) ->
+(Backbone, Field, TextInput) ->
   class ChatInput extends Backbone.View
     ## Events
 

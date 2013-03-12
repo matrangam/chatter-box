@@ -10,11 +10,6 @@ define "lib/Presentation/ChatWindow",
 
     className: "chat-window"
 
-    ## Initialize
-
-    initialize: (options) =>
-      @_yieldWrapper = $("<div>").addClass("yield")
-
     ## Templates
 
     template: _.template(
@@ -27,7 +22,6 @@ define "lib/Presentation/ChatWindow",
     ## Render
 
     render: =>
-      @$el.append(@_yieldWrapper)
       @$el.html @template()
       @$(".chat-list").append(@_getChatList().render().el)
       @$(".chat-input").append(@_getChatInput().render().el)
