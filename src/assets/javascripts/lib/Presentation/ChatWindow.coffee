@@ -10,17 +10,10 @@ define "lib/Presentation/ChatWindow",
 
     className: "chat-window"
 
-    ## Templates
-
-    template: _.template(
-      '<div class="chat-list"></div>'
-    )
-
     ## Render
 
     render: =>
-      @$el.html @template()
-      @$(".chat-list").append(@_getChatList().render().el)
+      @$el.append(@_getChatList().render().el)
       @$el.append(@_getChatInput().render().el)
       @
 

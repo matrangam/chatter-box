@@ -5,15 +5,13 @@ define "lib/Presentation/ChatList",
 ], (Backbone, ChatListItem) ->
   class ChatList extends Backbone.View
 
-    ## Template
-
-    template: _.template(
-      '<ul class="chatList"></ul>'
-    )
+    className: "chat-list"
 
     render: =>
-      @$el.html @template()
+      @$el.append(@_getChatList())
       @
 
-    AppendNewListItem: (message) => @$(".chatList").append(new ChatListItem(message: message).render().el)
+    _getChatList: => @_chatList ?= $('<ul class="chats">')
+
+    AppendNewListItem: (message) => @$(".chats").append(new ChatListItem(message: message).render().el)
 
