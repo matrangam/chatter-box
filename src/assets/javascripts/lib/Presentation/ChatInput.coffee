@@ -10,6 +10,8 @@ define "lib/Presentation/ChatInput",
 
     events: "submit form": "_handleFormSubmit"
 
+    className: "chat-input"
+
     ## Initialize
 
     initialize: (options) ->

@@ -13,8 +13,7 @@ define "lib/Presentation/ChatWindow",
     ## Templates
 
     template: _.template(
-      '<div class="chat-list"></div>'+
-      '<div class="chat-input"></div>'
+      '<div class="chat-list"></div>'
     )
 
     ## Render
@@ -22,7 +21,7 @@ define "lib/Presentation/ChatWindow",
     render: =>
       @$el.html @template()
       @$(".chat-list").append(@_getChatList().render().el)
-      @$(".chat-input").append(@_getChatInput().render().el)
+      @$el.append(@_getChatInput().render().el)
       @
 
     ## Protected Instance Methods
