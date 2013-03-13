@@ -1,13 +1,16 @@
 @import "compass";
 @import "../vendor/_normalize-v1.0.1";
 
+body, html {
+   height:100%;
+}
+
 body {
   padding: 10px;
   min-width: 940px;
   text-align: center;
   font-size: 75%;
   color: #444;
-  height: 100%;
 }
 
 body, input, textarea, select, button {
@@ -21,6 +24,23 @@ body, input, textarea, select, button {
   position: relative;
   text-align: left;
   width: 940px;
+}
+
+.chat-window {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.chat-list {
+  border: 1px solid red;
+  overflow: scroll;
+  height: 90%;
+}
+
+.chat-input {
+  border: 1px solid green;
+  height:100px;
 }
 
 .primary-actions {
@@ -41,13 +61,4 @@ body, input, textarea, select, button {
       text-align: right;
     }
   }
-}
-
-.chat-window {
-  height: 100%;
-}
-
-.chat-list {
-  height: 90%;
-  overflow: scroll;
 }
