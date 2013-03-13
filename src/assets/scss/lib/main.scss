@@ -33,19 +33,24 @@ body, input, textarea, select, button {
 }
 
 .chat-list {
-  border: 1px solid red;
+  border: 1px solid black;
   overflow: scroll;
   height: 90%;
+  margin-bottom: 10px;
+  > ul {
+    position: relative;
+  }
 }
 
 .chat-input {
-  border: 1px solid green;
+  border: 1px solid black;
   height:100px;
 }
 
 .primary-actions {
   > ul > li {
     @include inline-block;
+    float: right;
 
     &:first-child {
       margin-top: 0;
