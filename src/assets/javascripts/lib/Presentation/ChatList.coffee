@@ -8,9 +8,7 @@ define "lib/Presentation/ChatList",
     ## Template
 
     template: _.template(
-      '<div>'+
-        '<ul class="chatList"></ul>'+
-      '</div>'
+      '<ul class="chatList"></ul>'
     )
 
     render: =>

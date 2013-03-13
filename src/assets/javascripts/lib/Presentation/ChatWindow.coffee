@@ -13,10 +13,8 @@ define "lib/Presentation/ChatWindow",
     ## Templates
 
     template: _.template(
-      '<div>'+
-        '<div class="chat-list"></div>'+
-        '<div class="chat-input"></div>'+
-      '</div>'
+      '<div class="chat-list"></div>'+
+      '<div class="chat-input"></div>'
     )
 
     ## Render

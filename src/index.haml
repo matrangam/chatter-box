@@ -19,7 +19,6 @@
   %body
     #main
 
-      #torso{:role => :main}
 
     %script{:src => "#{root_path}/assets/javascripts/vendor/require-jquery.js"}
     :javascript
@@ -46,7 +45,7 @@
             ResGetPath: "#{root_path}/assets/i18n/__lng__.json?" + (new Date()).getTime(),
             Language: "en-US"
           },
-          RootContainer: $("#torso"),
+          RootContainer: $("#main"),
         };
       });
     %script{:src => "#{root_path}/assets/javascripts/app/init.js"}
