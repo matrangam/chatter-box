@@ -45,6 +45,10 @@ body, input, textarea, select, button {
 .chat-input {
   border: 1px solid black;
   height:100px;
+  .input {
+    width: 75%;
+    margin: 15px;
+  }
 }
 
 .primary-actions {
@@ -54,16 +58,6 @@ body, input, textarea, select, button {
 
     &:first-child {
       margin-top: 0;
-    }
-  }
-}
-
-.field {
-  &.horizontal {
-    > label.first {
-      @include float(left);
-      width: 16em;
-      text-align: right;
     }
   }
 }

@@ -15,9 +15,7 @@ define "lib/Presentation/ChatInput",
     ## Initialize
 
     initialize: (options) ->
-      @_chatInputField = new Field
-        input: new TextInput()
-        label: "Chat here -->"
+      @_chatInputField = new Field(input: new TextInput())
 
     ## Templates
 
