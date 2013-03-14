@@ -9,6 +9,7 @@ require ["config"], (config) ->
     "moment": "vendor/moment"
     "underscore": "vendor/underscore-1.3.3.min"
     "q": "vendor/q-0.8.9"
+    "pusher": "vendor/pusher.1.12.min"
 
   requirePaths[a] = b for a, b of config.Require?.Overrides
 
@@ -39,6 +40,7 @@ require ["config"], (config) ->
       "delay"
       "backbone-relational"
       "moment"
+      "pusher"
     ],
 
     (Q, $, i18n, _, Backbone, Application) =>

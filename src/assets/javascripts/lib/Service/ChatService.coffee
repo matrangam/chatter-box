@@ -1,8 +1,14 @@
 define "lib/Service/ChatService",
 [
   "backbone"
-], (Backbone) ->
+  "pusher"
+], (Backbone, Pusher) ->
   class ChatService extends Backbone.Model
+
+    ## Initialize
+
+    intitialize: =>
+      pusher = new Pusher("947fc1f864a8c578343c")
 
     ## Public Instance Methods
 
