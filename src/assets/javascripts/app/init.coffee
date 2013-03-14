@@ -59,7 +59,7 @@ require ["config"], (config) ->
       Q.allResolved([i18nDefer.promise, getRulesPromise]).then(() =>
         $(document).ready =>
           config.iLogRules = getRulesPromise.valueOf()
-          @QuoterApplication = new Application(config)
-          @onerror = @QuoterApplication.ErrorHandler
+          @ChatApplication = new Application(config)
+          @onerror = @ChatApplication.ErrorHandler
       ).done()
   )
