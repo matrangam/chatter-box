@@ -1,4 +1,4 @@
-# QFRS Web Application
+# Chatter-Box Web Application
 
 ## Dependencies
 
@@ -7,12 +7,12 @@
 * __[Ruby](http://www.ruby-lang.org/en/)__: Necessary for various libraries that run the build process.
 * __[Bundler](http://gembundler.com)__: Manages Ruby libraries.
 * __[CoffeeScript](http://coffeescript.org/)__: A javascript abstraction language the lowers the barrier to complex object-oriented javascript programming.
-* __[Jison](http://zaach.github.com/jison/)__: A javascript Bison implementation necessary to compile the parser for the QFRS Rules Engine intermediary language.
+* __[Jison](http://zaach.github.com/jison/)__: A javascript Bison implementation necessary to compile the parser for the Chatter-Box Rules Engine intermediary language.
 * __[Codo](https://github.com/netzpirat/codo)__: Generates HTML documentation for CoffeeScript source code.
 
 ## Installation
 
-To install dependencies necessary for building and/or developing QFRS:
+To install dependencies necessary for building and/or developing Chatter-Box:
 
 ### OSX
 
